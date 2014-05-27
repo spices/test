@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
-
+//ttttyyyyy
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end
