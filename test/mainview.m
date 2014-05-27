@@ -33,7 +33,7 @@
     // Do any additional setup after loading the view from its nib.
 //    NSArray *views= [[NSBundle mainBundle] loadNibNamed:@"row" owner:nil options:nil];
 //    [self.view addSubview:views[0]];
-//ttttfff
+//tttt
    
 }
 
