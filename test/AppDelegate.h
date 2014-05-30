@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 @class mainview;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    UIWindow *window;
+    mainview *MainView;
+}
 
-@property (strong, nonatomic) UIWindow *window;
-@property(strong,nonatomic)IBOutlet mainview *mainview;
+@property (retain, nonatomic) IBOutlet mainview *MainView;
+
+@property (retain, nonatomic) IBOutlet UIWindow *window;
 @end

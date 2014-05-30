@@ -10,7 +10,12 @@
 
 @interface mainview : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *view1;
+@property (weak, nonatomic) IBOutlet UIView *view2;
+- (IBAction)scroll:(id)sender;
+
 - (IBAction)tableview:(id)sender;
 - (IBAction)search:(id)sender;
 - (IBAction)rep:(id)sender;
+- (IBAction)switchViews:(id)sender;
 @end

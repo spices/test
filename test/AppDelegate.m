@@ -7,18 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#include "TableViewController.h"
+#include "mainview.h"
 
 @implementation AppDelegate
+@synthesize window;
+@synthesize MainView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-     //   [NSThread sleepForTimeInterval:3.0]; //设置启动停留时间
-    // Override point for customization after application launch.
-    self.window.rootViewController=self.mainview;
-    [self.window makeKeyAndVisible];
+    [window addSubview:MainView.view];
+    [window makeKeyAndVisible];
     return YES;
     
 }

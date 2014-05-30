@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "Music.h"
+#import"mainview.h"
 
 @interface TableViewController ()<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>{
     NSArray *mu;
@@ -33,7 +34,7 @@
 
 - (void)viewDidLoad
 {
-    [self.navigationController setToolbarHidden:NO animated:YES];
+   // [self.navigationController setToolbarHidden:NO animated:YES];
    
     mual=[NSMutableArray array];
     [super viewDidLoad];
@@ -41,9 +42,12 @@
     Music *mu1=[Music musicwithName:@"liuxing" title:@"001.png"];
     Music *mu2=[Music musicwithName:@"liuxing2" title:@"002.png"];
     [mual addObjectsFromArray:@[mu1,mu2]];
-    NSLog(@"%d",mual.count);
     
-    TableViewController *tableviewcontroller=[[TableViewController alloc]init];
+    
+//      TableViewController *tableviewcontroller=[[TableViewController alloc]init];
+//      UINavigationController *_navTest = [[UINavigationController alloc] initWithRootViewController:tableviewcontroller];
+    
+  
    // self.tabBarController = [[TableViewController alloc]initWithNibName:@"TableViewController" bundle:nil];
         // Do any additional setup after loading the view from its nib.
 }
@@ -138,4 +142,10 @@
 }
 
 
+- (IBAction)back:(id)sender {
+    
+    [self dismissModalViewControllerAnimated:YES];
+   // [self presentModalViewController:mv animated:YES];
+    
+}
 @end

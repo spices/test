@@ -8,9 +8,10 @@
 
 #import "mainview.h"
 #import "TableViewController.h"
+#import "ScrollController.h"
 
 @interface mainview ()<UIAlertViewDelegate>
-
+@property(strong,nonatomic)TableViewController *table;
 @end
 
 @implementation mainview
@@ -28,12 +29,15 @@
 {
     [super viewDidLoad];
     
-//   UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-//   [self.view addSubview:navBar];
-    // Do any additional setup after loading the view from its nib.
-//    NSArray *views= [[NSBundle mainBundle] loadNibNamed:@"row" owner:nil options:nil];
-//    [self.view addSubview:views[0]];
-//ttttyyyyy
+    
+    
+    [self.view addSubview:_view2];
+    [self.view addSubview:_view1];
+
+
+    
+    
+    
    
 }
 
@@ -43,14 +47,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)scroll:(id)sender {
+    
+    ScrollController *scroll=[[ScrollController alloc]init];
+    [self presentViewController:scroll animated:YES completion:nil];
+
+}
+
 - (IBAction)tableview:(id)sender {
     
     TableViewController *tableviewcontroller=[[TableViewController alloc]init];
+  //  mainview *mv=[[mainview alloc]init];
     
- //   [self.navigationController pushViewController:tableviewcontroller animated:NO];
+   // [self.navigationController pushViewController:tableviewcontroller animated:NO];
+
+    [self presentViewController:tableviewcontroller animated:YES completion:nil];
  
-     [self presentModalViewController:tableviewcontroller animated:YES];
-    //  [self.navigationController pushViewController:tableviewcontroller animated:YES];
+
+    
 
 }
 
@@ -69,4 +83,13 @@
     UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"reply" message:nil delegate:nil cancelButtonTitle:@"Cancel"otherButtonTitles:nil, nil];
     [alert show];
 }
+
+- (IBAction)switchViews:(id)sender{
+	UISegmentedControl *segmentedControl = sender;
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"switchViews" object:[NSNumber numberWithInteger:[segmentedControl selectedSegmentIndex]]];
+  
+}
+
+               
+               
 @end

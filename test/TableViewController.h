@@ -11,5 +11,6 @@
 @interface TableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 //ttttyyyyy
 @property (weak, nonatomic) IBOutlet UITableView *table;
+- (IBAction)back:(id)sender;
 
 @end
