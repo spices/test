@@ -14,4 +14,5 @@
 - (IBAction)scroll1:(id)sender;
 - (IBAction)scroll2:(id)sender;
 - (IBAction)change:(id)sender;
+- (IBAction)back:(id)sender;
 @end

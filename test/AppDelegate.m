@@ -17,7 +17,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [window addSubview:MainView.view];
+   // [NSThreadsleepForTimeInterval:2];
+    UINavigationController*nav = [[UINavigationController alloc]initWithRootViewController:self.MainView];
+ 
+    self.window.rootViewController = nav;
+   
+  
+    
+//   [window addSubview:MainView.view];
     [window makeKeyAndVisible];
     return YES;
     

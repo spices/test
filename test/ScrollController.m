@@ -7,8 +7,9 @@
 //
 
 #import "ScrollController.h"
+#import "CellController.h"
 #define imgcount 5
-@class ScrollController;
+
 
 @interface ScrollController ()<UIScrollViewDelegate>
 {
@@ -30,8 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@"h");
+    [self scroll1:nil];
       
    }
 
@@ -84,9 +84,8 @@
 
     CGFloat imgw=self.view.frame.size.width;
     CGFloat imgh=self.view.frame.size.height;
-    
     for (int i=0; i<imgcount; i++) {
-        NSLog(@"%d",i);
+
         
         //创建图片视图
         UIImageView *imgview=[[UIImageView alloc]init];
@@ -97,10 +96,24 @@
         imgview.frame=CGRectMake(i*imgw, 0, imgw, imgh);
         
         [scroll addSubview:imgview];
+        
+        
+        
     }
-   
     
+    //在最后一页加入按钮
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];//初始化button，选择button类型
+    btn.frame = CGRectMake(4*imgw+100, 360, 100, 35);//大小和位置
+    [btn setTitle:@"开始使用" forState:(UIControlStateNormal)];
+    [btn addTarget:(self) action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    [scroll addSubview:btn];
+    //使button能监听
+    scroll.delaysContentTouches=NO;
+   // scroll.userInteractionEnabled=NO;
+    
+
     [self.view addSubview:scroll];
+    
     
     scroll.contentSize=CGSizeMake(imgcount*imgw, imgh);
     
@@ -121,6 +134,14 @@
     
     //页数
     uipage.numberOfPages=imgcount;
+    
+    
+    //按钮
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];//初始化button，选择button类型
+//    btn.frame = CGRectMake(100, 100, 90, 35);//大小和位置
+//    [btn setTitle:@"hello" forState:(UIControlStateNormal)];
+//    [self.view addSubview:btn];
+    
     
     // 设置非选中页的圆点颜色
     uipage.pageIndicatorTintColor = [UIColor redColor];
@@ -144,7 +165,18 @@
     }
 }
 
+- (IBAction)back:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
 
+-(void)btnClick
+{
+
+  //  NSLog(@"按钮点击了");
+  // [self.navigationController popToRootViewControllerAnimated:YES];
+    CellController *cl=[[CellController alloc]init];
+    [self presentViewController:cl animated:YES completion:nil];
+}
 
 #pragma mark - UIScrollView的代理方法  <UIScrollViewDelegate>
 #pragma mark 当scrollView正在滚动的时候调用

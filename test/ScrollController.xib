@@ -19,6 +19,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
+                        <barButtonItem systemItem="reply" id="yxt-hS-gIf">
+                            <connections>
+                                <action selector="back:" destination="-1" id="m4F-Eh-6qi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="wfw-Dw-hiz"/>
                         <barButtonItem title="s" style="plain" id="D48-Zc-FhR">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="UHC-GV-QbI">

@@ -9,9 +9,13 @@
 #import "mainview.h"
 #import "TableViewController.h"
 #import "ScrollController.h"
+#import "CellController.h"
+#import "CustomView.h"
+#import "TextFieldController.h"
 
 @interface mainview ()<UIAlertViewDelegate>
 @property(strong,nonatomic)TableViewController *table;
+
 @end
 
 @implementation mainview
@@ -29,14 +33,28 @@
 {
     [super viewDidLoad];
     
+    self.title=@"index";
     
     
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(rep:)];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
+  
+    //toolbar
+    [self.navigationController  setToolbarHidden:NO animated:YES];
+//    UIBarButtonItem *one = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self  action:@selector(search:)];
+//
+//    UIBarButtonItem *two = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:nil action:nil];
+//    UIBarButtonItem *three = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:nil];
+//    UIBarButtonItem *four = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:nil action:nil];
+//    UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//    [self setToolbarItems:[NSArray arrayWithObjects:flexItem, one, flexItem, two, flexItem, three, flexItem, four, flexItem, nil]];
+//
+   // self.tabBarController.viewControllers=@[_view1,_view2];
     [self.view addSubview:_view2];
     [self.view addSubview:_view1];
+   
 
-
-    
-    
     
    
 }
@@ -50,8 +68,9 @@
 - (IBAction)scroll:(id)sender {
     
     ScrollController *scroll=[[ScrollController alloc]init];
+    
     [self presentViewController:scroll animated:YES completion:nil];
-
+   
 }
 
 - (IBAction)tableview:(id)sender {
@@ -61,9 +80,10 @@
     
    // [self.navigationController pushViewController:tableviewcontroller animated:NO];
 
-    [self presentViewController:tableviewcontroller animated:YES completion:nil];
- 
-
+     //[self presentViewController:tableviewcontroller animated:YES completion:nil];
+ [self.navigationController pushViewController:tableviewcontroller animated:YES];
+    tableviewcontroller.title=@"table";
+    
     
 
 }
@@ -88,6 +108,21 @@
 	UISegmentedControl *segmentedControl = sender;
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"switchViews" object:[NSNumber numberWithInteger:[segmentedControl selectedSegmentIndex]]];
   
+}
+
+- (IBAction)cellbtn:(id)sender {
+    CellController *cell=[[CellController alloc]init];
+    cell.title=@"cell test";
+    [self.navigationController pushViewController:cell animated:YES];
+}
+
+- (IBAction)Custom:(id)sender {
+  
+}
+
+- (IBAction)TextField:(id)sender {
+    TextFieldController *tf=[[TextFieldController alloc]init];
+    [self.navigationController pushViewController:tf animated:YES];
 }
 
                
