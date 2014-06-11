@@ -50,6 +50,7 @@
 //    UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 //    [self setToolbarItems:[NSArray arrayWithObjects:flexItem, one, flexItem, two, flexItem, three, flexItem, four, flexItem, nil]];
 //
+    //tt
    // self.tabBarController.viewControllers=@[_view1,_view2];
     [self.view addSubview:_view2];
     [self.view addSubview:_view1];
