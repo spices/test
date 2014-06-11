@@ -13,9 +13,14 @@
 @property (weak, nonatomic) IBOutlet UIView *view1;
 @property (weak, nonatomic) IBOutlet UIView *view2;
 - (IBAction)scroll:(id)sender;
+@property (weak, nonatomic) IBOutlet UINavigationBar *bar;
 
 - (IBAction)tableview:(id)sender;
 - (IBAction)search:(id)sender;
 - (IBAction)rep:(id)sender;
 - (IBAction)switchViews:(id)sender;
+- (IBAction)cellbtn:(id)sender;
+- (IBAction)Custom:(id)sender;
+- (IBAction)TextField:(id)sender;
+
 @end
