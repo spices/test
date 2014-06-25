@@ -48,7 +48,6 @@
     
     
     
-    
     [self.navigationController  setToolbarHidden:YES animated:YES];
     //隐藏导航栏
     //[self.navigationController setNavigationBarHidden:YES];

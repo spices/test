@@ -18,15 +18,39 @@
 {
     
    // [NSThreadsleepForTimeInterval:2];
-    UINavigationController*nav = [[UINavigationController alloc]initWithRootViewController:self.MainView];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self.MainView];
+  
  
     self.window.rootViewController = nav;
    
-  
-    
+    //启动画面
+    [self performSelector:@selector(RemovemainView) withObject:nil afterDelay:0];
 //   [window addSubview:MainView.view];
+    
+     DefaultImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 20.0, 320.0, 460.0)];
+    //mainImageView.frame=self.window.bounds;
+    [DefaultImageView setImage:[UIImage imageNamed:@"Default.png"]];
+    DefaultImageView.userInteractionEnabled = NO;
+    [self.window addSubview:DefaultImageView];
+    
+    
     [window makeKeyAndVisible];
     return YES;
+    
+}
+
+-(void)RemoveView{
+    [DefaultImageView removeFromSuperview];
+}
+
+
+-(void)RemovemainView{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:2.0];
+    [UIView setAnimationDidStopSelector:@selector(RemoveView)];
+    DefaultImageView.alpha = 0;
+    [UIView commitAnimations];
     
 }
 

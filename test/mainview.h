@@ -22,5 +22,6 @@
 - (IBAction)cellbtn:(id)sender;
 - (IBAction)Custom:(id)sender;
 - (IBAction)TextField:(id)sender;
+- (IBAction)tabbar:(id)sender;
 
 @end

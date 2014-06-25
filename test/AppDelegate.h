@@ -12,6 +12,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     UIWindow *window;
     mainview *MainView;
+    UIImageView *DefaultImageView;
 }
 
 @property (retain, nonatomic) IBOutlet mainview *MainView;

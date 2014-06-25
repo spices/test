@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="mainview">
             <connections>
-                <outlet property="bar" destination="xlD-uI-Obw" id="Pxa-Ex-wiM"/>
                 <outlet property="view" destination="rc5-Cg-GOG" id="9mG-l4-a3i"/>
                 <outlet property="view1" destination="i5M-Pr-FkT" id="AKg-RM-t9y"/>
                 <outlet property="view2" destination="S5t-fk-hSs" id="GHN-cU-4qA"/>
@@ -55,19 +54,12 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlD-uI-Obw">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <items>
-                        <navigationItem title="Title" id="TIM-84-RXe"/>
-                    </items>
-                </navigationBar>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="123.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-GC-Kqm">
-                    <rect key="frame" x="1" y="169" width="317" height="178"/>
+                    <rect key="frame" x="0.0" y="207" width="317" height="178"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-FZ-JYA" customClass="SegmentedControl">
-                    <rect key="frame" x="90" y="360" width="123" height="29"/>
+                    <rect key="frame" x="89" y="398" width="123" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="First"/>
@@ -114,6 +106,16 @@
                     <state key="normal" title="SQLite">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u2-lQ-vTf">
+                    <rect key="frame" x="17" y="164" width="45" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="tabbar">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="tabbar:" destination="-1" eventType="touchUpInside" id="Yur-kz-zQ6"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

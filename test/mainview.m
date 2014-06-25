@@ -12,6 +12,7 @@
 #import "CellController.h"
 #import "CustomView.h"
 #import "TextFieldController.h"
+#import "TabBarController.h"
 
 @interface mainview ()<UIAlertViewDelegate>
 @property(strong,nonatomic)TableViewController *table;
@@ -33,15 +34,17 @@
 {
     [super viewDidLoad];
     
+    
     self.title=@"index";
-    
-    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"1@2x.png"] forBarMetrics:(UIBarMetricsDefault)];
+    [self.navigationController.navigationBar setTintColor:[UIColor redColor]];
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(rep:)];
+    
     self.navigationItem.leftBarButtonItem = leftButton;
     
   
     //toolbar
-    [self.navigationController  setToolbarHidden:NO animated:YES];
+     [self.navigationController  setToolbarHidden:YES animated:YES];
 //    UIBarButtonItem *one = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self  action:@selector(search:)];
 //
 //    UIBarButtonItem *two = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:nil action:nil];
@@ -124,6 +127,11 @@
 - (IBAction)TextField:(id)sender {
     TextFieldController *tf=[[TextFieldController alloc]init];
     [self.navigationController pushViewController:tf animated:YES];
+}
+
+- (IBAction)tabbar:(id)sender {
+    TabBarController *tb=[[TabBarController alloc]init];
+    [self.navigationController pushViewController:tb animated:YES];
 }
 
                

@@ -23,6 +23,15 @@
 {
     [super viewDidLoad];
     
+    UIButton *button =[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30 )];
+    //button.frame = CGRectMake(0, 0, 24, 24);
+    [button setImage:[UIImage imageNamed:@"b2.png"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = backItem;
+    
+    
+    
     NSArray *array=[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"news.plist" ofType:nil]];
     newes=[NSMutableArray array];
     for (NSDictionary *dict in array) {
@@ -32,6 +41,10 @@
 
 
 }
+- (void)backAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
